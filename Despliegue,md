@@ -1,0 +1,7 @@
+# Despliegue de la aplicación PokeDex en Azure 
+
+## Paso 1: Elegimos el Servicios de Azure
+- Crear recurso: En el portal de Azure, crea el servicio seleccionado (App Service).
+- Configuración: Configura los Detalles del proyecto (Suscripción y Grupo de recursos), Detalles de instancia (Nombre, Publicar, Código, Pila del entorno en tiempo de ejecución, Sistema operativo y Región) y los Planes de precios (Plan de windows).
+
+### Paso 2:
