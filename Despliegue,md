@@ -1,6 +1,6 @@
 # Despliegue de la aplicación PokeDex en Azure 
 
-Requisitos previos
+##Requisitos previos
 
 Antes de comenzar, asegúrate de tener lo siguiente:
 - Cuenta activa de Azure for Students
@@ -8,7 +8,7 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 - La aplicación PokeDex lista en tu repositorio GitHub o localmente.
 - Azure CLI instalado en tu máquina.
 
-## Paso 1: Crear un nuevo recurso en Azure
+### Paso 1: Crear un nuevo recurso en Azure
 
 1. Inicia sesión en tu cuenta de Azure for Students desde el portal Azure Portal.
 2. En el menú de la izquierda, selecciona Recursos y luego haz clic en + Crear un recurso.
@@ -20,7 +20,7 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 - Plan de tarifa: Selecciona el plan gratuito de Azure for Students, que te permite desplegar aplicaciones web.
 5. Haz clic en Revisar + Crear y luego en Crear para desplegar el recurso.
 
-### Paso 2: Configurar el entorno de desarrollo en Azure
+#### Paso 2: Configurar el entorno de desarrollo en Azure
 
 1. Después de que tu App Service haya sido creado, ve a la página del recurso y selecciona Deployment Center (Centro de Despliegue).
 2. Configura el origen del código:
@@ -28,7 +28,7 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 - Si tu código está en local, selecciona Local Git como opción y sigue las instrucciones para crear un repositorio remoto en Azure.
 3. Sigue los pasos para conectar tu repositorio o subir tu código a Azure.
 
-#### Paso 3: Desplegar la aplicación desde Azure CLI
+##### Paso 3: Desplegar la aplicación desde Azure CLI
 
 Si prefieres desplegar tu aplicación usando la línea de comandos, sigue estos pasos:
 1. Abre una terminal y asegúrate de estar autenticado en Azure con:
@@ -57,14 +57,14 @@ git add .
 git commit -m "Desplegando PokeDex a Azure"
 git push azure master
 
-##### Paso 4: Configurar variables de entorno (opcional)
+###### Paso 4: Configurar variables de entorno (opcional)
 
 Si tu aplicación requiere variables de entorno, puedes configurarlas directamente en el portal de Azure:
 1. Ve al recurso de tu App Service.
 2. Selecciona Configuración > Configuración de la aplicación.
 3. Agrega las variables necesarias para la configuración de tu aplicación, como claves API o credenciales.
 
-###### Paso 5: Verificar el despliegue
+####### Paso 5: Verificar el despliegue
 
 1. Una vez que la aplicación se haya desplegado, puedes verificar si todo funciona correctamente visitando la URL asignada a tu aplicación en Azure.
 2. También puedes hacer un seguimiento del despliegue en la sección Deployment Center para ver los registros y el estado de la implementación
