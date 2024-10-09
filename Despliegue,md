@@ -20,53 +20,22 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 - Plan de tarifa: Selecciona el plan gratuito de Azure for Students, que te permite desplegar aplicaciones web.
 5. Haz clic en Revisar + Crear y luego en Crear para desplegar el recurso.
 
-#### Paso 2: Configurar el entorno de desarrollo en Azure
+#### Paso 2: Desplegar la aplicación desde Azure 
+- Nos dirigimos al recurso
+- Vamos a la seccion de herramientas de desarrollo, dentro de este a herramientas avanzadas y le damos clic en ir
+- Presionamos en Debug console>CMD
+- Le damos clic en las carpetas site>wwwroot y en esta desplegamos, subiendo los archivos del dist en esta 
+- Despues de esto funcionara la aplicacion
 
-1. Después de que tu App Service haya sido creado, ve a la página del recurso y selecciona Deployment Center (Centro de Despliegue).
-2. Configura el origen del código:
-- Si tu código está en GitHub, selecciona GitHub como origen y conecta tu repositorio.
-- Si tu código está en local, selecciona Local Git como opción y sigue las instrucciones para crear un repositorio remoto en Azure.
-3. Sigue los pasos para conectar tu repositorio o subir tu código a Azure.
+##### Paso 3: Verificar el despliegue
 
-##### Paso 3: Desplegar la aplicación desde Azure CLI
+- Una vez que la aplicación se haya desplegado, puedes verificar si todo funciona correctamente visitando la URL asignada a tu aplicación en Azure.
+Pero tendra problemas de seguridad en los encabezados de los headers 
 
-Si prefieres desplegar tu aplicación usando la línea de comandos, sigue estos pasos:
-1. Abre una terminal y asegúrate de estar autenticado en Azure con:
-
-az login
-
-2. Navega a tu proyecto PokeDex y asegúrate de que está en un repositorio Git. Inicializa uno si no lo está:
-
-git init
-
-3. Si no has creado una App Service con anterioridad, crea uno con el siguiente comando (si ya lo has creado en el paso anterior, puedes saltar este paso):
-
-az webapp create --resource-group <nombre-grupo-recursos> --plan <nombre-plan> --name <nombre-app> --runtime "PYTHON|3.8" --deployment-local-git
-
-4. Configura el despliegue remoto:
-
-az webapp deployment user set --user-name <tu-usuario> --password <tu-contraseña>
-
-5. Agrega Azure como un repositorio Git remoto:
-
-git remote add azure https://<tu-url-azure>.scm.azurewebsites.net/<nombre-app>.git
-
-6. Sube el código a Azure para desplegar la aplicación:
-
-git add .
-git commit -m "Desplegando PokeDex a Azure"
-git push azure master
-
-###### Paso 4: Configurar variables de entorno (opcional)
-
-Si tu aplicación requiere variables de entorno, puedes configurarlas directamente en el portal de Azure:
-1. Ve al recurso de tu App Service.
-2. Selecciona Configuración > Configuración de la aplicación.
-3. Agrega las variables necesarias para la configuración de tu aplicación, como claves API o credenciales.
-
-####### Paso 5: Verificar el despliegue
-
-1. Una vez que la aplicación se haya desplegado, puedes verificar si todo funciona correctamente visitando la URL asignada a tu aplicación en Azure.
-2. También puedes hacer un seguimiento del despliegue en la sección Deployment Center para ver los registros y el estado de la implementación
+###### Paso 4: Configuraramos la seguridad
+- Creamos un archivo llamado web.config
+- Le agregamos las directivas para seguridad 
+- Observamos bien que no se haya afectado los estilos de las aplicación
+- Revisamos en la pagina https://securityheaders.com/ colocamos el enlace de la aplicación
 
 
